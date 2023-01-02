@@ -8,6 +8,7 @@ class Api::V1::MobileController < ApplicationController
   def show
     if params[:class]
       model = params[:class].classify.constantize
+      model = params[:class].classify.constantize      
       respond_with model.find(params[:id]).to_json
     end
   end
